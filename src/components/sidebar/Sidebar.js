@@ -8,6 +8,8 @@ import HelpIcon from '@mui/icons-material/Help';
 import WorkOutlineIcon from '@mui/icons-material/WorkOutline';
 import EventIcon from '@mui/icons-material/Event';
 import SchoolIcon from '@mui/icons-material/School';
+import { Users } from '../../dummyData';
+import Closefriends from '../closeFriends/Closefriends';
 
 
 
@@ -52,29 +54,16 @@ function Sidebar() {
               <SchoolIcon className='sidebarIcon'/>
               <span className="sidebarListItemText">Course</span>
           </li>
-          
-          
+        
 
         </ul>
         <button className="sidebarButton">Show More</button>
         <hr className='sidebarHr'/>
         <ul className="sidebarFriendsList">
-          <li className="sidebarFriend">
-            <img className='sidebarFriendImg' src="/assets/person/1.jpg" alt="" />
-            <span className="sidebarFriendName">Elon Musk</span>
-          </li> 
-          <li className="sidebarFriend">
-            <img className='sidebarFriendImg' src="/assets/person/3.jpg" alt="" />
-            <span className="sidebarFriendName">Jeff Bezos</span>
-          </li>
-           <li className="sidebarFriend">
-            <img className='sidebarFriendImg' src="/assets/person/4.jpg" alt="" />
-            <span className="sidebarFriendName">Vitalic</span>
-          </li>
-          <li className="sidebarFriend">
-            <img className='sidebarFriendImg' src="/assets/person/2.png" alt="" />
-            <span className="sidebarFriendName">Mark</span>
-          </li>
+        {Users.map((u)=> (
+            <Closefriends key={u.id} user={u}/>
+          ))}
+          
 
         </ul>
       </div>

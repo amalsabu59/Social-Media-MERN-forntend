@@ -1,5 +1,6 @@
 import './rightbar.css'
-
+import { Users } from '../../dummyData';
+import Online from '../online/Online';
 function Rightbar() {
   return (
     <div className='rightbar'>
@@ -14,27 +15,9 @@ function Rightbar() {
         <img className='rightbarAd' src="https://edge.zivost.com/wp-content/uploads/2021/09/Cover.jpg" alt="" />
         <h4 className="rightbarTitle">Online Friends</h4>
         <ui className="rightbarFriendList">
-          <li className="rightbarFriend">
-            <div className="rightbarProfileContainer">
-              <img className='rightbarProfileImg' src="assets/person/3.jpg" alt="" />
-              <span className="rightbarOnline"></span>
-            </div>
-            <span className=''>Jeff</span>
-          </li>
-          <li className="rightbarFriend">
-            <div className="rightbarProfileContainer">
-              <img className='rightbarProfileImg' src="http://localhost:3000/assets/person/4.jpg" alt="" />
-              <span className="rightbarOnline"></span>
-            </div>
-            <span className=''>Vitalic</span>
-          </li>
-          <li className="rightbarFriend">
-            <div className="rightbarProfileContainer">
-              <img className='rightbarProfileImg' src="assets/person/1.jpg" alt="" />
-              <span className="rightbarOnline"></span>
-            </div>
-            <span className=''>Musk</span>
-          </li>
+         { Users.map((u)=> (
+           < Online key={u.id} user={u} />
+         ))}
         </ui>
 
       </div>

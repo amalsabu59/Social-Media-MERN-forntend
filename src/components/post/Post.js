@@ -1,9 +1,16 @@
 import './post.css'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { Users } from '../../dummyData';
+import { useState } from 'react';
 
 function Post( {post} ) {
-    console.log(Users)
+    const [like, setLike] = useState(post.like)
+    const [isliked, setIslike] = useState(false)
+    const likeHandler = () => {
+        setLike(isliked ? like-1 : like +1 )
+        setIslike(!isliked )
+    }
+  
   return (
     <div className='post'>
         <div className="PostWrapper">
@@ -24,9 +31,9 @@ function Post( {post} ) {
             </div>
             <div className="postBottom">
                 <div className="postBottomLeft">
-                    <img className='likeIcon' src="http://www.vectorico.com/wp-content/uploads/2018/02/Facebook-Heart-300x300.png" alt="" />
-                    <img className='likeIcon' src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Facebook_Like_button.svg/1024px-Facebook_Like_button.svg.png" alt="" />
-                    <span className="postLikeCounter">32 people liked it</span>            
+                    <img className='likeIcon' onClick={likeHandler} src="http://www.vectorico.com/wp-content/uploads/2018/02/Facebook-Heart-300x300.png" alt=""  />
+                    <img className='likeIcon' onClick={likeHandler}  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/23/Facebook_Like_button.svg/1024px-Facebook_Like_button.svg.png" alt="" />
+                    <span className="postLikeCounter"> {like} people liked it</span>            
                 </div>
                 <div className="postBottomRight">
                     <span className="postCommentText">9 Comments</span>

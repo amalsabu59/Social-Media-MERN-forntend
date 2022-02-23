@@ -27,6 +27,7 @@ function Rightbar( {profile}) {
     return(
       <>
         <h4 className='rightbarTitle'>User information</h4>
+
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
             <span className="rightbarInfokey">City :</span>
@@ -42,23 +43,41 @@ function Rightbar( {profile}) {
           </div>
         </div>
         <h4 className='rightbarTitle'>User Friends</h4>
+
         <div className="rightbarfollowings">
+
           <div className="rightbarFollowing">
             <img src="assets/person/3.jpg" alt="" className="rightbarFollowingImg" />
             <span className="rightbarFollowingName">John Cater</span>
           </div>
+
           <div className="rightbarFollowing">
             <img src="assets/person/2.png" alt="" className="rightbarFollowingImg" />
             <span className="rightbarFollowingName">John Cater</span>
           </div>
+
           <div className="rightbarFollowing">
             <img src="assets/person/1.jpg" alt="" className="rightbarFollowingImg" />
             <span className="rightbarFollowingName">John Cater</span>
           </div>
+
+          <div className="rightbarFollowing">
+            <img src="assets/person/2.png" alt="" className="rightbarFollowingImg" />
+            <span className="rightbarFollowingName">John Cater</span>
+          </div>
+
           <div className="rightbarFollowing">
             <img src="assets/person/4.jpg" alt="" className="rightbarFollowingImg" />
             <span className="rightbarFollowingName">John Cater</span>
           </div>
+
+          <div className="rightbarFollowing">
+            <img src="assets/person/2.png" alt="" className="rightbarFollowingImg" />
+            <span className="rightbarFollowingName">John Cater</span>
+          </div>
+
+          
+
         </div>
         
       </>

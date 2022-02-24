@@ -3,8 +3,10 @@ import { Users } from '../../dummyData';
 import Online from '../online/Online';
 
 function Rightbar( {profile}) {
+  const PF = process.env.REACT_APP_PUBLIC_FOLDER; 
   const HomeRightbar = () => {
-    return(
+    
+    return (
       <>
              <div className="birthdayContainer">
           <img className='birthdayImg' src="https://www.downloadclipart.net/large/birthday-gift-png-clipart.png" alt="" />
@@ -47,12 +49,12 @@ function Rightbar( {profile}) {
         <div className="rightbarfollowings">
 
           <div className="rightbarFollowing">
-            <img src="assets/person/3.jpg" alt="" className="rightbarFollowingImg" />
+            <img src={`${PF}person/3.jpg`} alt="" className="rightbarFollowingImg" />
             <span className="rightbarFollowingName">John Cater</span>
           </div>
 
           <div className="rightbarFollowing">
-            <img src="assets/person/2.png" alt="" className="rightbarFollowingImg" />
+            <img src={`${PF}person/3.jpg`} alt="" className="rightbarFollowingImg" />
             <span className="rightbarFollowingName">John Cater</span>
           </div>
 

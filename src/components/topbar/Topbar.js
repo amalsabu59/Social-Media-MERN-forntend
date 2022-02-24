@@ -3,11 +3,14 @@ import SearchIcon from '@mui/icons-material/Search';
 import PersonIcon from '@mui/icons-material/Person';
 import ForumIcon from '@mui/icons-material/Forum';
 import NotificationsIcon from '@mui/icons-material/Notifications';
+import { Link } from "react-router-dom"
 function Topbar() {
   return (
     <div className="topBarContainer">
         <div className="topbarLeft">
+            <Link to="/">
             <span className="logo">HelloClub</span>
+            </Link>
         </div>
         <div className="topbarCenter">
             <div className="searchBar">

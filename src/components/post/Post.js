@@ -6,9 +6,12 @@ import { useState } from 'react';
 function Post( {post} ) {
     const [like, setLike] = useState(post.like)
     const [isliked, setIslike] = useState(false)
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER
+   
     const likeHandler = () => {
         setLike(isliked ? like-1 : like +1 )
         setIslike(!isliked )
+    
     }
   
   return (

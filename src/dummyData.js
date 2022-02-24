@@ -1,22 +1,22 @@
 export const Users = [
     {
         id:1,
-        ProfilePicture:"assets/person/1.jpg",
+        ProfilePicture:"https://image.cnbcfm.com/api/v1/image/105907143-1557513032836gettyimages-1142462855.jpeg?v=1625506871",
         username:"Jeff"
     },
     {
         id:2,
-        ProfilePicture:"assets/person/4.jpg",
+        ProfilePicture:"https://m.economictimes.com/thumb/msid-80095660,width-1200,height-900,resizemode-4,imgsize-601228/elon-musk-is-the-worlds-second-richest-person-with-an-estimated-net-worth-of-158-billion-.jpg",
         username:"elon"
     },
     {
         id:3,
-        ProfilePicture:"assets/person/3.jpg",
+        ProfilePicture:"https://imageio.forbes.com/specials-images/imageserve/60f86940452e8decfa6b55da/0x0.jpg?format=jpg&crop=4500,2531,x0,y116,safe&fit=crop",
         username:"devid"
     },
     {
         id:4,
-        ProfilePicture:"assets/person/2.png",
+        ProfilePicture:"https://cdn.vox-cdn.com/thumbor/q4pDWHNQ5FtLSTp9fittiTub5IA=/0x334:4000x2334/fit-in/1200x600/cdn.vox-cdn.com/uploads/chorus_asset/file/22510524/849111222.jpg",
         username:"vitalic"
     },
 ];
@@ -43,7 +43,7 @@ export const Posts = [
     {
         id:3,
         desc:"hello",
-        photo:"assets/person/4.jpg",
+        photo:"https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.facebook.com%2Fapple%2F&psig=AOvVaw2CPDi087i-XrVcMmcT4lDP&ust=1645774342475000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCKCzpa7pl_YCFQAAAAAdAAAAABAD",
         date:" 5 min ago",
         userId: 3,
         like:1,

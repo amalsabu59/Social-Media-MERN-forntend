@@ -2,40 +2,44 @@ import './post.css'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
 import { useEffect, useState } from 'react';
 import axios from "axios"
+import { format } from 'timeago.js';
+import { Link } from "react-router-dom"
 
-function Post( {post} ) {
+function Post({ post }) {
     const [like, setLike] = useState(post.likes.length)
     const [isliked, setIslike] = useState(false)
-    const [user, setUser] = useState({})
+    const [user, setUser] = useState({ })
     const PF = process.env.REACT_APP_PUBLIC_FOLDER
 
     
+
+    
   useEffect(() => {
-    const fetchUser = async ()=> {
-      const res = await axios.get(`users/${post.userId}`)
+    const fetchUser = async () => {
+      const res = await axios.get(`/users?userId=${post.userId}`)
       setUser(res.data)
+      console.log(user,"fuck");
     }
    fetchUser()
-  
-  
-
-  }, [])
+  }, [post.userId])
    
     const likeHandler = () => {
         setLike(isliked ? like-1 : like +1 )
         setIslike(!isliked )
     
     }
-  
+
   return (
     <div className='post'>
         <div className="PostWrapper">
             <div className="postTop">
                 <div className="postTopLeft">
+                    <Link to={`profile/${user.username}`}>
                     <img className='postProfileImg' src={user.profilePicture || "https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0="} alt="" />
+                    </Link>
                     <span className="postUsername"> 
-                    {user.userName} </span>
-                    <span className="postDate">{post.date}</span>
+                    {user.username} </span>
+                    <span className="postDate">{ format(post.createdAt) }</span>
                 </div>
                 <div className="postTopRighrt">
                 <MoreVertIcon />

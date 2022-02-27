@@ -18,7 +18,7 @@ function Post({ post }) {
     const fetchUser = async () => {
       const res = await axios.get(`/users?userId=${post.userId}`)
       setUser(res.data)
-      console.log(user,"fuck");
+      console.log(user,"fucked up");
     }
    fetchUser()
   }, [post.userId])

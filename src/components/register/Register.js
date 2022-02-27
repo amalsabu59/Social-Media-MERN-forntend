@@ -1,6 +1,14 @@
+import { useRef } from 'react';
 import './register.css'
 
 function Register() {
+    const username = useRef();
+    const email = useRef();
+    const password = useRef();
+    const passwordAgain = useRef();
+
+
+
   return (
     <div className='login'>
         <div className="loginWrapper">

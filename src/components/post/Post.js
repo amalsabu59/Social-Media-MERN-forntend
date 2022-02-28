@@ -1,11 +1,14 @@
 import './post.css'
 import MoreVertIcon from '@mui/icons-material/MoreVert';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import axios from "axios"
 import { format } from 'timeago.js';
 import { Link } from "react-router-dom"
+import { AuthContext } from '../../context/AuthContext';
+
 
 function Post({ post }) {
+    const {user:currentUser} = useContext(AuthContext)
     const [like, setLike] = useState(post.likes.length)
     const [isliked, setIslike] = useState(false)
     const [user, setUser] = useState({ })
@@ -24,6 +27,12 @@ function Post({ post }) {
   }, [post.userId])
    
     const likeHandler = () => {
+        try{
+            axios.put("/posts/"+post._id+"/like",{userId:currentUser._id})
+        }
+        catch(err){
+
+        }
         setLike(isliked ? like-1 : like +1 )
         setIslike(!isliked )
     

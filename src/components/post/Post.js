@@ -7,6 +7,8 @@ import { Link } from "react-router-dom"
 import { AuthContext } from '../../context/AuthContext';
 
 
+
+
 function Post({ post }) {
     const {user:currentUser} = useContext(AuthContext)
     const [like, setLike] = useState(post.likes.length)
@@ -25,7 +27,9 @@ function Post({ post }) {
     }
    fetchUser()
   }, [post.userId])
-   
+
+  
+   console.log(post.img,"yfaa");
     const likeHandler = () => {
         try{
             axios.put("/posts/"+post._id+"/like",{userId:currentUser._id})
@@ -55,8 +59,8 @@ function Post({ post }) {
                 </div>
             </div>
             <div className="postCenter">
-                <span className="postText">{post.desc}</span>
-                <img className='postImg' src={post.img} alt="" />
+                <span className="postText">{  post.desc}</span>
+                <img className='postImg' src={PF + post.img} alt="" />
             </div>
             <div className="postBottom">
                 <div className="postBottomLeft">

@@ -6,7 +6,11 @@ const INITIAL_STATE = {
        _id: "621babb2b297db1758b5bac0",
         username : "Modi",
         email:"modi@modi.com",
-        profilePicture:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV9KimbujxWT0F3yYuvzT61PcYYg27QMRq5g&usqp=CAU"
+        profilePicture:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV9KimbujxWT0F3yYuvzT61PcYYg27QMRq5g&usqp=CAU",
+        coverPicture: "",
+        isAdmin:false,
+        followers:[],
+        followings:[],
 
 },
     isFetching: false,

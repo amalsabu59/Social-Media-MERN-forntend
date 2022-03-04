@@ -23,7 +23,7 @@ function Post({ post }) {
     const fetchUser = async () => {
       const res = await axios.get(`/users?userId=${post.userId}`)
       setUser(res.data)
-      console.log(user,"fucked up");
+    
     }
    fetchUser()
   }, [post.userId])
@@ -47,7 +47,7 @@ function Post({ post }) {
         <div className="PostWrapper">
             <div className="postTop">
                 <div className="postTopLeft">
-                    <Link to={`profile/${user.username}`}>
+                    <Link to={`/profile/${user.username}`}>
                     <img className='postProfileImg' src={user.profilePicture || "https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0="} alt="" />
                     </Link>
                     <span className="postUsername"> 

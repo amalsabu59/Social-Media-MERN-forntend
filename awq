@@ -1,0 +1,131 @@
+[33mcommit 27c9c8cbf34050750c2498c57b84e6e10c58ebd7[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Wed Mar 2 21:54:51 2022 +0530
+
+    right bar friend list updated using useContext
+
+[33mcommit 2229a433533e7169436719ab0c8af60d02e94c3c[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Tue Mar 1 22:37:20 2022 +0530
+
+    rightside bar friends api updated
+
+[33mcommit e8d6841e2941895b0ff79572d058ce00a2b2b721[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Tue Mar 1 18:01:06 2022 +0530
+
+    file uploading api updated
+
+[33mcommit 6da29e5b38c8655f54a6f6fa159bf99b98e97e4a[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Mon Feb 28 12:22:54 2022 +0530
+
+    like function updated
+
+[33mcommit 10aa1bcacb703a6896171782022e063554024e34[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Mon Feb 28 02:06:44 2022 +0530
+
+    topbar api updated
+
+[33mcommit 37ae0ed8e03d44ca4b6445ee98bcba5fa86de572[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Sun Feb 27 21:51:01 2022 +0530
+
+    login updated using useContext hoook
+
+[33mcommit 3470941daf405dfb6c7241c8f56aeef3d1d6054d[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Sun Feb 27 15:42:10 2022 +0530
+
+    folder structure changed
+
+[33mcommit bcf09d3cf927d32ff9b3aa6a121c62d713c6e619[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Sun Feb 27 15:17:43 2022 +0530
+
+    AuthContext updated
+
+[33mcommit d94a7a42db240d593f818ded1c091fb597da7cc3[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Sun Feb 27 00:16:20 2022 +0530
+
+    profile page and home integrated with api
+
+[33mcommit 4a49880e0f3fe40e6d4aa90d06becbb3ad3d785f[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Thu Feb 24 19:38:23 2022 +0530
+
+    data fetched into useEffect using axios
+
+[33mcommit 34dc2b7722d441d1ce5de5b79726384f4c48b045[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Thu Feb 24 14:18:26 2022 +0530
+
+    pages routed using react router dom
+
+[33mcommit ee56185b28c4c9ec99393dcdd74ab8ccb86c3e01[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Thu Feb 24 01:21:53 2022 +0530
+
+    login and signup page added
+
+[33mcommit caac01244b16a2775a6901f51ebf97839d5b7122[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Wed Feb 23 23:26:49 2022 +0530
+
+    git friends profile view updated
+
+[33mcommit f7d504f7d220c35d3632e1add1cc7f772ce95391[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Wed Feb 23 23:09:30 2022 +0530
+
+    profile page added
+
+[33mcommit 9bda4f71aeb98a570a997ccdb3f34fe2b2d99386[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Wed Feb 23 20:02:23 2022 +0530
+
+    like functionality upated
+
+[33mcommit 9f79305bedb893dfd177668660ba27e25cd89a2a[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Wed Feb 23 16:14:04 2022 +0530
+
+    dynamic data added
+
+[33mcommit c228e4b4446ff7966f3d2a8a3e5016becd0f87aa[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Tue Feb 22 19:07:55 2022 +0530
+
+    online friends list added
+
+[33mcommit 5daac8e16e7c64f2790516c9b371bc56c527e059[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Tue Feb 22 16:45:18 2022 +0530
+
+    feed section added
+
+[33mcommit 138c5d769ff9939930cac81bf1aa85c1ce43271f[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Tue Feb 22 15:26:46 2022 +0530
+
+    share post section added
+
+[33mcommit 43d362cc6b05706e295584e9dcc2b1d6bb227112[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Mon Feb 21 22:00:01 2022 +0530
+
+    sidebar updated
+
+[33mcommit d2a6292c0cb9bdac7ec42920a1eb460d7fd242db[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Mon Feb 21 16:45:15 2022 +0530
+
+    Navbar updated
+
+[33mcommit b717627420f7a4fa6d9711c9739754b1b08a0150[m
+Author: amalsabu59 <amalsabu59@gmail.com>
+Date:   Mon Feb 21 12:44:53 2022 +0530
+
+    Initialize project using Create React App

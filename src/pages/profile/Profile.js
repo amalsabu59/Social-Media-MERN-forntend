@@ -8,9 +8,16 @@ import axios from 'axios'
 import { useParams } from "react-router-dom"
 
 
+
 function Profile() {
+
+   
+
+    
     const [user, setUser] = useState({})
      const username = useParams().username
+
+  
      
 
     useEffect(() => {

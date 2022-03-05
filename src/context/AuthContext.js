@@ -2,17 +2,19 @@ import { Children, createContext, useReducer } from "react"
 import AuthReducer from "./AuthReducer";
 
 const INITIAL_STATE = {
-    user: {
-       _id: "621babb2b297db1758b5bac0",
-        username : "Modi",
-        email:"modi@modi.com",
-        profilePicture:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV9KimbujxWT0F3yYuvzT61PcYYg27QMRq5g&usqp=CAU",
-        coverPicture: "",
-        isAdmin:false,
-        followers:[],
-        followings:[],
 
-},
+//     user: {
+//        _id: "621babb2b297db1758b5bac0",
+//         username : "Modi",
+//         email:"modi@modi.com",
+//         profilePicture:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRV9KimbujxWT0F3yYuvzT61PcYYg27QMRq5g&usqp=CAU",
+//         coverPicture: "",
+//         isAdmin:false,
+//         followers:[],
+//         followings:[],
+
+// },
+    user : null,
     isFetching: false,
     error:false
 }

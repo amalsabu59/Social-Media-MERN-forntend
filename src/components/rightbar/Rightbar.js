@@ -13,13 +13,17 @@ function Rightbar( {user} ) {
   const [friends, setFriends] = useState([])
   const{user: currentUser, dispatch} = useContext(AuthContext)
   const [followed, setFollowed] = useState(currentUser.followings.includes(user?.id))
+  const [allusers, setAllusers] = useState([])
 
+useEffect(() => {
+ const fetchUser = async () => {
+   const res = await axios.get("/users/allusers")
+   setAllusers(res.data)
+ }
+ fetchUser()
+}, [])
 
-// useEffect(() => {
-//   setFollowed(currentUser.followings.includes(user?.id))
-// }, [currentUser, user.id])
-
-
+console.log(allusers)
 
 useEffect(() => {
   const getFriends = async () => {
@@ -64,7 +68,7 @@ const handleClick = async () => {
         <img className='rightbarAd' src="https://edge.zivost.com/wp-content/uploads/2021/09/Cover.jpg" alt="" />
         <h4 className="rightbarTitle">Online Friends</h4>
         <ui className="rightbarFriendList">
-         { Users.map((u)=> (
+         { allusers.map((u)=> (
            < Online key={u.id} user={u} />
          ))}
         </ui>

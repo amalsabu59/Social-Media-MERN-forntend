@@ -1,5 +1,4 @@
 import './rightbar.css'
-import { Users } from '../../dummyData';
 import Online from '../online/Online';
 import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
@@ -14,6 +13,14 @@ function Rightbar( {user} ) {
   const{user: currentUser, dispatch} = useContext(AuthContext)
   const [followed, setFollowed] = useState(currentUser.followings.includes(user?.id))
   const [allusers, setAllusers] = useState([])
+
+
+
+  // useEffect(()=>{
+  //   setFollowed(currentUser.followings.includes(user?.id))
+  // },[currentUser,user.id])
+  
+
 
 useEffect(() => {
  const fetchUser = async () => {
@@ -40,14 +47,14 @@ useEffect(() => {
 const handleClick = async () => {
   try {
     if(followed){
-      await axios.put("/users/"+user._id+"/unfollow" ,{userId:currentUser._id})
+     await axios.put("/users/"+user._id+"/unfollow" ,{userId:currentUser._id})
       dispatch({type:"UNFOLLOW",payload:user._id})
       
     }else {
-      await axios.put("/users/"+user._id+"/follow",{userId:currentUser._id})
+    await axios.put("/users/"+user._id+"/follow",{userId:currentUser._id})
       dispatch({type:"FOLLOW",payload:user._id})
     }
-    setFollowed(!followed)
+    setFollowed()
   }catch(err) {
     console.log(err)
   }

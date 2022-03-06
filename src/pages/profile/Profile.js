@@ -16,8 +16,9 @@ function Profile() {
     const{user: currentUser, dispatch} = useContext(AuthContext)
     const [update, setUpdate] = useState(null)
     const [file, setFile] = useState(null)
+    const [cover, setCover] = useState(null)
     // const userId = useParams().UserId
-   // console.log(currentUser,"userid");
+    console.log(cover);
     const submitHandler = async (e) => {
          e.preventDefault()
          const Updated = {
@@ -39,11 +40,24 @@ function Profile() {
             }
         
 
+        }else {
+            const data = new FormData();
+            const fileName = Date.now() + cover.name
+            data.append("name", fileName)
+            data.append("file", cover)
+            Updated.coverPicture = fileName
+            // console.log(newPost)
+
+            try{
+                await axios.post("/uploaddp",data)
+            }catch(err) {
+                console.log(err)
+            }
         }
 
         try {
            await axios.put("/users/"+currentUser._id, Updated)
-           window.location.reload()
+          window.location.reload()
         } catch(err){
 
         }
@@ -75,7 +89,7 @@ console.log(PF + user.profilePicture,"aaaaaa");
                 <div className="profileRight">
                     <div className="profileRightTop">
                         <div className="profilecover">
-                        <img className='profileCoverImg'  src={user.coverPicture }  alt="" />
+                        <img className='profileCoverImg'   src={user.coverPicture? PF + user.coverPicture: PF + "person/noCover.png"}  alt="" />
                        
                         {user.username === currentUser.username && (
                              <button  onClick={setUpdate}>update profile </button>
@@ -86,9 +100,9 @@ console.log(PF + user.profilePicture,"aaaaaa");
                         <>
                         <form onSubmit={submitHandler} >
                         <hr/>
-                        {/* <label for="avatar">Choose a Cover picture:</label>
-                        <input  type="file" name="" id="file" accept='.png,.jpeg,.jpg' onChange={e=>setFile(e.target.files[0])}/>
-                        <hr/> */}
+                        <label for="avatar">Choose a Cover picture:</label>
+                        <input  type="file" name="" id="file" accept='.png,.jpeg,.jpg' onChange={e=>setCover(e.target.files[0])}/>
+                        <hr/>
                         <label for="avatar">Choose a Profile picture:</label>
                         <input  type="file" name="" id="file" accept='.png,.jpeg,.jpg' onChange={e=>setFile(e.target.files[0])}/>
                         <button  type='submit' >update</button>
@@ -96,7 +110,7 @@ console.log(PF + user.profilePicture,"aaaaaa");
                          </>: <h1> </h1>}
                         
 
-                        <img className='profileUserImg'   src={user.profilePicture ? PF +"/person/"+ user.profilePicture : PF + "person/noAvatar.png" } alt="" />   
+                        <img className='profileUserImg'   src={user.profilePicture ? PF + user.profilePicture : PF + "person/noAvatar.png" } alt="" />   
                         </div>
                         <div className="profileInfo">
                             <h4 className='profileInfoname'>{user.username}</h4>

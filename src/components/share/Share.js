@@ -30,7 +30,7 @@ function Share() {
             console.log(newPost)
 
             try{
-                await axios.post("./upload",data)
+                await axios.post("./uploaddp",data)
             }catch(err) {
                 console.log(err)
             }
@@ -40,7 +40,7 @@ function Share() {
 
         try {
            await axios.post("/posts",newPost)
-           //window.location.reload()
+           window.location.reload()
         } catch(err){
 
         }

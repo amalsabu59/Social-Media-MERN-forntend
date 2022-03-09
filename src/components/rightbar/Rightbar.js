@@ -16,16 +16,15 @@ function Rightbar( {user} ) {
 
 
 
-  // useEffect(()=>{
-  //   setFollowed(currentUser.followings.includes(user?.id))
-  // },[currentUser,user.id])
-  
-
-
 useEffect(() => {
  const fetchUser = async () => {
-   const res = await axios.get("/users/allusers")
-   setAllusers(res.data)
+   try{
+    const res = await axios.get("/users/suggested/"+currentUser._id)
+    setAllusers(res.data)
+   }catch(err){
+    console.log(err)
+}
+   
  }
  fetchUser()
 }, [])
@@ -43,10 +42,11 @@ useEffect(() => {
   }
   getFriends()
 }, [user])
+console.log(user);
 
 const handleClick = async () => {
   try {
-    if(followed){
+    if(!followed){
      await axios.put("/users/"+user._id+"/unfollow" ,{userId:currentUser._id})
       dispatch({type:"UNFOLLOW",payload:user._id})
       
@@ -54,7 +54,7 @@ const handleClick = async () => {
     await axios.put("/users/"+user._id+"/follow",{userId:currentUser._id})
       dispatch({type:"FOLLOW",payload:user._id})
     }
-    setFollowed()
+    setFollowed(!followed)
   }catch(err) {
     console.log(err)
   }
@@ -73,7 +73,7 @@ const handleClick = async () => {
         </div>
         {/* <img className='rightbarAd' src="https://i.pinimg.com/564x/11/66/38/116638d3f142cbd7cff7cab15c53045c.jpg" alt="" /> */}
         <img className='rightbarAd' src="https://edge.zivost.com/wp-content/uploads/2021/09/Cover.jpg" alt="" />
-        <h4 className="rightbarTitle">Online Friends</h4>
+        <h4 className="rightbarTitle">People You May Know</h4>
         <ui className="rightbarFriendList">
          { allusers.map((u)=> (
            < Online key={u.id} user={u} />
@@ -113,7 +113,7 @@ const handleClick = async () => {
           {friends.map((friend)=> (
             <Link to={friend.username} style={{textDecoration:"none"}}>
             <div className="rightbarFollowing">
-            <img src={friend.profilePicture} alt="" className="rightbarFollowingImg" />
+            <img src={friend.profilePicture ? PF + friend.profilePicture : PF + "noAvatar.png" } alt="" className="rightbarFollowingImg" />
             <span className="rightbarFollowingName">{friend.username}</span>
           </div>
           </Link>

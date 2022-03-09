@@ -29,7 +29,7 @@ function Post({ post }) {
   }, [post.userId])
 
   
-   console.log(post.img,"yfaa");
+   
     const likeHandler = () => {
         try{
             axios.put("/posts/"+post._id+"/like",{userId:currentUser._id})
@@ -48,7 +48,7 @@ function Post({ post }) {
             <div className="postTop">
                 <div className="postTopLeft">
                     <Link to={`/profile/${user.username}`}>
-                    <img className='postProfileImg' src={user.profilePicture || "https://media.istockphoto.com/vectors/default-profile-picture-avatar-photo-placeholder-vector-illustration-vector-id1223671392?k=20&m=1223671392&s=612x612&w=0&h=lGpj2vWAI3WUT1JeJWm1PRoHT3V15_1pdcTn2szdwQ0="} alt="" />
+                    <img className='postProfileImg' src={user.profilePicture ? PF + user.profilePicture : PF + "person/noAvatar.png" } alt="" />
                     </Link>
                     <span className="postUsername"> 
                     {user.username} </span>

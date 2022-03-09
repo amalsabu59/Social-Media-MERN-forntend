@@ -50,10 +50,11 @@
 .shareIcon {
     font-style: 18px;
     margin-right: 3px;
+    
 }
 .shareOptionText {
     font-style: 14px;
-    font-weight: 50;
+    font-weight: 500;
 }
 .shareButton {
    border: none;
@@ -63,6 +64,7 @@
    font-weight: 500;
    margin-right: 20px;
    cursor: pointer;
+   color: white;
     
 }
 .shareImgContainer{
@@ -73,6 +75,10 @@
   .shareImg{
     width: 100%;
     object-fit: cover;
+  }
+  .uploadbtn {
+      height: 5px;
+      background-color: white;
   }
   
   .shareCancelImg{

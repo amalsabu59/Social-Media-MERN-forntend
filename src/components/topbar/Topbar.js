@@ -7,7 +7,12 @@ import { Link } from "react-router-dom"
 import { useContext } from "react";
 import {AuthContext} from '../../context/AuthContext'
 function Topbar() {
+
     const {user} = useContext(AuthContext)
+
+    const PF = process.env.REACT_APP_PUBLIC_FOLDER;
+    console.log(user,"userrrrrrrrrrrrrr");
+    
   return (
     <div className="topBarContainer">
         <div className="topbarLeft">
@@ -44,7 +49,7 @@ function Topbar() {
                 </div>
             </div>
             <Link to={`/profile/${user.username}`}>
-            <img src={user.profilePicture} alt="" className="topbarImage"/>
+            <img  src= {user.profilePicture ? PF + user.profilePicture : PF + "noAvatar.png" } alt="" className="topbarImage"/>
             </Link>
         </div>
     </div>

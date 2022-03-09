@@ -7,6 +7,8 @@ import { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from "react-router-dom"
 import { AuthContext } from '../../context/AuthContext'
+import UploadFileIcon from '@mui/icons-material/UploadFile';
+import IconButton from '@mui/material/IconButton';
 
 
 
@@ -89,10 +91,10 @@ console.log(PF + user.profilePicture,"aaaaaa");
                 <div className="profileRight">
                     <div className="profileRightTop">
                         <div className="profilecover">
-                        <img className='profileCoverImg'   src={user.coverPicture? PF + user.coverPicture: PF + "person/noCover.png"}  alt="" />
+                        <img className='profileCoverImg'   src={user.coverPicture? PF + user.coverPicture: PF + "noCover.png"}  alt="" />
                        
                         {user.username === currentUser.username && (
-                             <button  onClick={setUpdate}>update profile </button>
+                               <IconButton> <UploadFileIcon fontSize='small' className='upload_icon' onClick={setUpdate} /> </IconButton >  
                              )}
                       
                         
@@ -110,7 +112,7 @@ console.log(PF + user.profilePicture,"aaaaaa");
                          </>: <h1> </h1>}
                         
 
-                        <img className='profileUserImg'   src={user.profilePicture ? PF + user.profilePicture : PF + "person/noAvatar.png" } alt="" />   
+                        <img className='profileUserImg'   src={user.profilePicture ? PF + user.profilePicture : PF + "noAvatar.png" } alt="" />   
                         </div>
                         <div className="profileInfo">
                             <h4 className='profileInfoname'>{user.username}</h4>

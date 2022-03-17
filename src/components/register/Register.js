@@ -2,6 +2,8 @@ import axios from 'axios';
 import { useRef } from 'react';
 import './register.css'
 import {useHistory} from 'react-router-dom'
+import { formHelperTextClasses } from '@mui/material';
+
 
 
 function Register() {
@@ -9,6 +11,9 @@ function Register() {
     const username = useRef();
     const email = useRef();
     const password = useRef();
+    // const city = useRef();
+    // const from = useRef();
+
     const passwordAgain = useRef();
     const history = useHistory()
 
@@ -20,7 +25,10 @@ function Register() {
             const user = {
                 username: username.current.value,
                 email: email.current.value,
-                password: password.current.value
+                password: password.current.value,
+                // city: city.current.value,
+                // from:from.current.value
+
             }
             try{
                 await axios.post("/auth/register", user)
@@ -45,9 +53,11 @@ function Register() {
                     <input placeholder='Email' required ref={email} type="email" className="loginInput" />
                     <input placeholder='Password' required ref={password} type="password" className="loginInput" />
                     <input placeholder='Re enter Password' required ref={passwordAgain} type="password" className="loginInput" />
+                    {/* <input placeholder='City' required ref={city} className="loginInput" />
+                    <input placeholder='State' required ref={from} className="loginInput" /> */}
                     <button className="loginButton"  type='submit' >SignUp</button>
                     <span className="LoginForgot">Forgot Password</span>
-                    <button className='loginReg'>Already Have an Acoount</button>
+                    <button className='loginReg' onClick={() => history.push('/login') }>Already Have an Acoount</button>
 
                 </form>
             </div>

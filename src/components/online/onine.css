@@ -30,3 +30,21 @@
  .rightbarUsername {
     font-weight: 500;
  }
+ .rightbarFollowButton {
+   margin-top: 13px;
+   margin-bottom: 10px;
+   margin-left: 15px;
+   border: none;
+   background-color: green;
+   color: white;
+   border-radius: 5px;
+   padding: 5px 10px;
+   display: flex;
+   align-items: center;
+   font-size: 16px;
+   font-weight: 500;
+   cursor: pointer;
+}
+.rightbarFollowButton:focus {
+   outline: none;
+}

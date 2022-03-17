@@ -30,7 +30,7 @@ function Share() {
             console.log(newPost)
 
             try{
-                await axios.post("./upload",data)
+                await axios.post("./uploaddp",data)
             }catch(err) {
                 console.log(err)
             }
@@ -45,13 +45,13 @@ function Share() {
 
         }
     }
-
+ console.log(user,"uuuuuuu")
 
   return (
       <div className='share'>
           <div className="shareWrapper">
               <div className="shareTop">
-                  <img className='shareProfileImg' src={user ? user.profilePicture : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__480.png"} alt="" />
+                  <img className='shareProfileImg'  src={user.profilePicture ? PF + user.profilePicture : PF + "noAvatar.png" } alt="" />
                   <input placeholder={'Whats in your mind ' + user.username + " ?"} className='shareInput' ref={desc}/>
               </div>
               <hr className='shareHr' />

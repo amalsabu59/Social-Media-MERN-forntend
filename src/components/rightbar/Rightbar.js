@@ -2,12 +2,13 @@ import './rightbar.css'
 import Online from '../online/Online';
 import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthContext';
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 
 function Rightbar( {user} ) {
+  
   const PF = process.env.REACT_APP_PUBLIC_FOLDER; 
   const [friends, setFriends] = useState([])
   const{user: currentUser, dispatch} = useContext(AuthContext)
@@ -21,6 +22,7 @@ useEffect(() => {
    try{
     const res = await axios.get("/users/suggested/"+currentUser._id)
     setAllusers(res.data)
+
    }catch(err){
     console.log(err)
 }
@@ -41,7 +43,7 @@ useEffect(() => {
     }
   }
   getFriends()
-}, [user])
+}, [])
 console.log(user);
 
 const handleClick = async () => {
@@ -49,10 +51,12 @@ const handleClick = async () => {
     if(!followed){
      await axios.put("/users/"+user._id+"/unfollow" ,{userId:currentUser._id})
       dispatch({type:"UNFOLLOW",payload:user._id})
+    
       
     }else {
     await axios.put("/users/"+user._id+"/follow",{userId:currentUser._id})
       dispatch({type:"FOLLOW",payload:user._id})
+      
     }
     setFollowed(!followed)
   }catch(err) {
@@ -71,8 +75,8 @@ const handleClick = async () => {
             <b>Jeff</b> and<b> 3 others</b> have birthday today
           </span>
         </div>
-        {/* <img className='rightbarAd' src="https://i.pinimg.com/564x/11/66/38/116638d3f142cbd7cff7cab15c53045c.jpg" alt="" /> */}
-        <img className='rightbarAd' src="https://edge.zivost.com/wp-content/uploads/2021/09/Cover.jpg" alt="" />
+        <img className='rightbarAd' src="https://www.gmapswidget.com/wp-content/uploads/2018/12/how-to-place-ads-on-your-website-without-annoying-users.jpg" alt="" />
+        {/* <img className='rightbarAd' src="https://edge.zivost.com/wp-content/uploads/2021/09/Cover.jpg" alt="" /> */}
         <h4 className="rightbarTitle">People You May Know</h4>
         <ui className="rightbarFriendList">
          { allusers.map((u)=> (
@@ -83,12 +87,13 @@ const handleClick = async () => {
     )
   }
   const ProfileRightbar = () => {
+   
     return(
       <>
       {user.username !== currentUser.username && (
-        <button className="rightbarFollowButton" onClick={handleClick}>
-          {followed ? "unFollow" : "Follow" }
-          {followed ? <RemoveIcon /> : <AddIcon/> }
+        <button className="rightbarFollowButton" onClick={handleClick} >
+           unFollow
+           <RemoveIcon /> 
           </button>
       )}
         <h4 className='rightbarTitle'>User information</h4>
